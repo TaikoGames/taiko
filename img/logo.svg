@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Taiko">
+  <defs>
+    <radialGradient id="wood" cx="0.4" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#cB9a63"/>
+      <stop offset="0.6" stop-color="#a9793f"/>
+      <stop offset="1" stop-color="#6f4a24"/>
+    </radialGradient>
+  </defs>
+  <!-- Wooden body -->
+  <circle cx="100" cy="100" r="97" fill="url(#wood)"/>
+  <!-- Segmented rim highlights -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#e7cfa0" stroke-width="6"
+          stroke-dasharray="9 7" opacity="0.55"/>
+  <!-- Drumhead skin -->
+  <circle cx="100" cy="100" r="84" fill="#efe3cc"/>
+  <!-- Rope / tack lacing -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#2a211a" stroke-width="5"
+          stroke-dasharray="3 4" stroke-linecap="round"/>
+  <!-- Head field -->
+  <circle cx="100" cy="100" r="72" fill="#3a2f27"/>
+  <!-- Mitsudomoe: three commas -->
+  <g fill="#efe3cc">
+    <g id="comma">
+      <path d="M100 100
+               C 100 80 84 66 74 62
+               A 22 22 0 1 1 122 72
+               C 116 88 108 94 100 100 Z"/>
+    </g>
+    <use href="#comma" transform="rotate(120 100 100)"/>
+    <use href="#comma" transform="rotate(240 100 100)"/>
+  </g>
+</svg>

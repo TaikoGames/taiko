@@ -1,0 +1,5 @@
+# Replace the Sitemap host with your real domain before publishing
+User-agent: *
+Allow: /
+
+Sitemap: https://www.taikogames.com/sitemap.xml
