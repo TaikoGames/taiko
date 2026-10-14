@@ -102,12 +102,14 @@ h1, h2, h3, h4 { line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; padding: 120px 0 90px; }
 .hero-bg {
-  position: absolute; inset: -20% -10% auto -10%; height: 720px; z-index: 0;
-  background:
-    radial-gradient(600px 400px at 20% 20%, rgba(106,92,255,0.35), transparent 60%),
-    radial-gradient(500px 380px at 80% 10%, rgba(0,212,255,0.28), transparent 60%),
-    radial-gradient(500px 500px at 60% 80%, rgba(244,63,94,0.18), transparent 60%);
-  filter: blur(20px);
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(to bottom, rgba(10,10,15,0.55) 0%, rgba(10,10,15,0.15) 34%, rgba(10,10,15,0.98) 100%),
+    linear-gradient(to right, var(--bg) 0%, rgba(10,10,15,0.55) 44%, rgba(10,10,15,0.05) 100%),
+    url("../img/covers/hero-bg.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 .hero-inner { position: relative; z-index: 1; }
 .eyebrow {
