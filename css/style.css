@@ -288,6 +288,57 @@ h1, h2, h3, h4 { line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
 .footer-trusted a { color: var(--accent-2); font-weight: 600; }
 .footer-trusted a:hover { text-decoration: underline; }
 
+/* ---------- Process ---------- */
+.process { padding: 96px 0; }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.process-step {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px; position: relative; transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.process-step:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.18); }
+.process-num {
+  display: block; margin-bottom: 14px; font-family: monospace; font-size: 14px;
+  letter-spacing: 0.12em; color: var(--accent-2);
+}
+.process-step h3 { font-size: 20px; }
+.process-step p { color: var(--muted); margin: 10px 0 0; font-size: 15px; }
+
+/* ---------- Trailers ---------- */
+.trailers { padding: 96px 0; background: var(--bg-2); }
+.trailers-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.trailers-copy h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-top: 10px; }
+.trailers-copy > p { color: var(--muted); font-size: 18px; margin: 18px 0 24px; max-width: 460px; }
+.trailer-points { list-style: none; margin: 0 0 30px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+.trailer-points li { position: relative; padding-left: 26px; color: var(--text); font-size: 15px; }
+.trailer-points li::before { content: "▶"; position: absolute; left: 0; top: 2px; color: var(--accent-2); font-size: 11px; }
+.trailers-media { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(0,0,0,0.85); }
+.trailers-media img { width: 100%; display: block; }
+.play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 76px; height: 76px; border-radius: 50%;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 40px -6px rgba(106,92,255,0.7);
+  display: grid; place-items: center;
+}
+.play-btn::before {
+  content: ""; position: absolute; inset: -10px; border-radius: 50%;
+  border: 2px solid rgba(0,212,255,0.5); animation: playpulse 2.4s ease-out infinite;
+}
+.play-btn::after {
+  content: ""; margin-left: 6px;
+  border-style: solid; border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #08080c;
+}
+@keyframes playpulse { 0%{transform:scale(1);opacity:0.8} 100%{transform:scale(1.5);opacity:0} }
+@media (prefers-reduced-motion: reduce){ .play-btn::before { animation: none; } }
+.trailers-tag {
+  position: absolute; top: 16px; left: 16px;
+  background: rgba(8,8,14,0.6); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.14); color: #fff;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 999px;
+}
+
 /* ---------- Legal / prose pages ---------- */
 .page { padding: 72px 0 96px; }
 .page .container { max-width: 780px; }
@@ -342,8 +393,8 @@ h1, h2, h3, h4 { line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .work-grid, .service-grid, .news-grid, .testimonial-grid { grid-template-columns: 1fr 1fr; }
-  .company-inner, .contact-inner { grid-template-columns: 1fr; }
+  .work-grid, .service-grid, .news-grid, .testimonial-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+  .company-inner, .contact-inner, .trailers-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .main-nav {
@@ -354,7 +405,7 @@ h1, h2, h3, h4 { line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
   .main-nav.open { transform: translateY(0); }
   .main-nav a { padding: 14px 0; width: 100%; border-bottom: 1px solid var(--line); }
   .nav-toggle { display: flex; }
-  .work-grid, .service-grid, .news-grid, .testimonial-grid { grid-template-columns: 1fr; }
+  .work-grid, .service-grid, .news-grid, .testimonial-grid, .process-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .pipeline { gap: 20px; }
 }
